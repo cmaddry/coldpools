@@ -1,0 +1,4 @@
+*.zip filter=lfs diff=lfs merge=lfs -text
+GOLD_IC.nc filter=lfs diff=lfs merge=lfs -text
+MOM.res.nc filter=lfs diff=lfs merge=lfs -text
+00010101.ocean_month.nc filter=lfs diff=lfs merge=lfs -text
