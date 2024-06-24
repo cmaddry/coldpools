@@ -1,0 +1,57 @@
+ ================Stocks Report Guide=====================================
+  
+ S(t) = Total amount     of a tracer in the component model at time t.
+        Calculated via the component model itself.
+  
+ F(t) = Cumulative input of a tracer to the component model at time t.
+        Calculated via interchange of fluxes with other component models.
+  
+ S(t) - S(0) = Cumulative increase of the component stocks at time t
+               Calculated by the component itself.
+  
+ In a conserving component F(t)=S(t)-S(0) to within numerical accuracy.
+  
+ Component Model refers to one of OCN, ATM, LND or ICE
+ 
+ NOTE: When use_lag_fluxes=.true. is used in coupler, the ocean stocks 
+       calculations are in error by an order which scales as the inverse
+       of the number of time steps.
+  
+ =======================================================================
+ ======================Initial Stock S(0)===============================
+     water[Kg]                heat[Joules]             salt[Kg]
+ATM  0.000000000000000E+00    0.000000000000000E+00    0.000000000000000E+00
+LND  0.000000000000000E+00    0.000000000000000E+00    0.000000000000000E+00
+ICE  4.215949185268140E+17   -1.408127027879559E+23    0.000000000000000E+00
+OCN  1.381544845723526E+21    1.982560304059405E+25    4.796748715532990E+19
+ ========================================================================
+ 
+ ===============================================
+t = TimeSinceStart[days]=        1.000
+ ===============================================
+Stocks of water                                        ATM                    LND                    ICE                    OCN
+Total =S(t)               [Kg]           0.000000000000000E+00   0.000000000000000E+00   4.223250833345075E+17   1.381544407835500E+21
+Change=S(t)-S(0)          [Kg]           0.000000000000000E+00   0.000000000000000E+00   7.301648076935040E+14  -4.378880269352960E+14
+Input =F(t)               [Kg]          -1.233271698393254E+15   1.292320017003416E+15   7.304366882120679E+14  -7.894850068222301E+14
+Diff  =F(t) - (S(t)-S(0)) [Kg]          -1.233271698393254E+15   1.292320017003416E+15   2.718805185638750E+11  -3.515969798869341E+14
+Error =Diff/S(0)          [NonDim]      -1.233271698393254E+15   1.292320017003416E+15   6.448856630291265E-07  -2.544955243221220E-07
+ 
+Lost Stocks in the exchange between Ice and Ocean water[Kg]       0.000000000000000E+00
+ 
+ 
+Stocks of heat                                        ATM                    LND                    ICE                    OCN
+Total =S(t)               [Joules]       0.000000000000000E+00   0.000000000000000E+00  -1.410592194442247E+23   1.982602436706815E+25
+Change=S(t)-S(0)          [Joules]       0.000000000000000E+00   0.000000000000000E+00  -2.465166562688017E+20   4.213264740994913E+20
+Input =F(t)               [Joules]      -3.557169167629662E+21   3.427758451278802E+21  -2.634023727343023E+20   3.929151924225568E+20
+Diff  =F(t) - (S(t)-S(0)) [Joules]      -3.557169167629662E+21   3.427758451278802E+21  -1.688571646550055E+19  -2.841128167693458E+19
+Error =Diff/S(0)          [NonDim]      -3.557169167629662E+21   3.427758451278802E+21   1.199161448589483E-04  -1.433060150491304E-06
+ 
+Lost Stocks in the exchange between Ice and Ocean heat[Joules]      -1.021033373955523E+17
+ 
+ 
+Stocks of salt                                        ATM                    LND                    ICE                    OCN
+Total =S(t)               [Kg]           0.000000000000000E+00   0.000000000000000E+00   2.189440098052069E+12   4.796748496588992E+19
+Change=S(t)-S(0)          [Kg]           0.000000000000000E+00   0.000000000000000E+00   2.189440098052069E+12  -2.189439983616000E+12
+Input =F(t)               [Kg]           0.000000000000000E+00   0.000000000000000E+00   2.189440098052089E+12  -2.189440098052089E+12
+Diff  =F(t) - (S(t)-S(0)) [Kg]           0.000000000000000E+00   0.000000000000000E+00   2.026367187500000E-02  -1.144360888671875E+05
+Error =Diff/S(0)          [NonDim]       0.000000000000000E+00   0.000000000000000E+00   2.026367187500000E-02  -2.385701141621548E-15
